@@ -1,5 +1,10 @@
 apply plugin: 'com.android.application'
 
+def yandexTranslateApiKey = System.getenv("YANDEX_TRANSLATE_API_KEY")
+if (yandexTranslateApiKey == null) {
+    throw new GradleException("Define YANDEX_TRANSLATE_API_KEY environment variable")
+}
+
 android {
     compileSdkVersion 23
     buildToolsVersion '25.0.0'
@@ -10,6 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField "String" , "YANDEX_TRANSLATE_API_KEY", "\"${yandexTranslateApiKey}\""
     }
     buildTypes {
         release {
