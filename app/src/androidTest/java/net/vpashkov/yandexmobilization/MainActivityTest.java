@@ -37,4 +37,24 @@ public class MainActivityTest {
         onView(withId(R.id.translateButton)).perform(click());
         onView(withId(R.id.translatedText)).check(matches(withText("Привет мир!")));
     }
+
+    @Test
+    public void bottomNavigationBarIsVisible() throws Exception {
+        onView(withId(R.id.navigation_bar)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void translateNavigationMenuItemIsVisible() throws Exception {
+        onView(withId(R.id.menu_translate)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void historyNavigationMenuItemIsVisible() throws Exception {
+        onView(withId(R.id.menu_history)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void settingsNavigationMenuItemIsVisible() throws Exception {
+        onView(withId(R.id.menu_settings)).check(matches(isDisplayed()));
+    }
 }

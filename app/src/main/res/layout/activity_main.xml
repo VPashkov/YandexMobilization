@@ -7,24 +7,36 @@
     android:layout_height="match_parent"
     tools:context="net.vpashkov.yandexmobilization.MainActivity">
 
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation_bar"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_navigation_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
     <EditText
         android:id="@+id/sourceText"
-        android:layout_width="match_parent"
+        android:layout_width="368dp"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
-        android:minLines="4" />
+        android:minLines="4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
         android:id="@+id/translateButton"
-        android:layout_width="match_parent"
+        android:layout_width="368dp"
         android:layout_height="wrap_content"
         android:text="@string/translate"
-        app:layout_constraintTop_toBottomOf="@id/sourceText" />
+        app:layout_constraintTop_toBottomOf="@+id/sourceText"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
         android:id="@+id/translatedText"
-        android:layout_width="match_parent"
+        android:layout_width="368dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/translateButton" />
+        app:layout_constraintTop_toBottomOf="@+id/translateButton"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
