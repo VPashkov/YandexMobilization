@@ -14,6 +14,7 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static net.vpashkov.yandexmobilization.BottomNavigationViewMatcher.withSelectedItemId;
 
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
@@ -33,9 +34,14 @@ public class MainActivityTest {
 
     @Test
     public void translatedTextContainsTranslationOfSourceText() throws Exception {
-        onView(withId(R.id.sourceText)).perform(typeText("Hello world!"));
+        onView(withId(R.id.sourceText)).perform(typeText("Hello world"));
         onView(withId(R.id.translateButton)).perform(click());
-        onView(withId(R.id.translatedText)).check(matches(withText("Привет мир!")));
+        onView(withId(R.id.translatedText)).check(matches(withText("Привет мир")));
+    }
+
+    @Test
+    public void translateNavigationMenuItemIsSelected() throws Exception {
+        onView(withId(R.id.navigation_bar)).check(matches(withSelectedItemId(R.id.menu_translate)));
     }
 
     @Test
