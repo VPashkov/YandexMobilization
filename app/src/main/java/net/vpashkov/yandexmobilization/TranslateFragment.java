@@ -17,7 +17,8 @@ import java.util.Locale;
 public class TranslateFragment extends Fragment {
 
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater,
+                             final ViewGroup container,
                              final Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_translate, container, false);
     }

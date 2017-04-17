@@ -19,18 +19,11 @@
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toTopOf="@+id/navigation_bar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <fragment
-            android:id="@+id/translate_fragment"
-            android:name="net.vpashkov.yandexmobilization.TranslateFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout="@layout/fragment_translate" />
     </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>
